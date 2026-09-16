@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { HealthModule } from './health/health.module.js';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         synchronize: true, // Auto-sync structural schema shifts locally
       }),
     }),
+    HealthModule,
   ],
 })
 export class AppModule {}
